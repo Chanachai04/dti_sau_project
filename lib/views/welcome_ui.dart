@@ -1,7 +1,4 @@
 // ignore_for_file: sort_child_properties_last
-
-import 'dart:math';
-
 import 'package:dti_sau_project/views/login_ui.dart';
 import 'package:dti_sau_project/views/signup_ui.dart';
 import 'package:flutter/material.dart';

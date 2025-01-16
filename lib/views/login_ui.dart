@@ -24,9 +24,11 @@ class _LoginUIState extends State<LoginUI> {
               ),
               Align(
                 alignment: Alignment.centerLeft,
-                child: Icon(
-                  Icons.arrow_back_ios_new,
-                  size: MediaQuery.of(context).size.width * 0.07,
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(Icons.arrow_back_ios_new),
                 ),
               ),
               Align(
@@ -118,7 +120,7 @@ class _LoginUIState extends State<LoginUI> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                   fixedSize: Size(MediaQuery.of(context).size.width * 1,
-                      MediaQuery.of(context).size.height * 0.07),
+                      MediaQuery.of(context).size.height * 0.06),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
@@ -149,7 +151,7 @@ class _LoginUIState extends State<LoginUI> {
                 ),
                 style: OutlinedButton.styleFrom(
                   fixedSize: Size(MediaQuery.of(context).size.width * 1,
-                      MediaQuery.of(context).size.height * 0.07),
+                      MediaQuery.of(context).size.height * 0.06),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),

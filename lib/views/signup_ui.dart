@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+import 'package:dti_sau_project/views/login_ui.dart';
 import 'package:flutter/material.dart';
 
 class SignupUI extends StatefulWidget {
@@ -21,9 +23,11 @@ class _SignupUIState extends State<SignupUI> {
               ),
               Align(
                 alignment: Alignment.centerLeft,
-                child: Icon(
-                  Icons.arrow_back_ios_new,
-                  size: MediaQuery.of(context).size.width * 0.07,
+                child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(Icons.arrow_back_ios_new),
                 ),
               ),
               Align(
@@ -46,7 +50,7 @@ class _SignupUIState extends State<SignupUI> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "make it work, make it right, make it fast.",
+                  "Create your profile to start your Journey.",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
@@ -59,11 +63,47 @@ class _SignupUIState extends State<SignupUI> {
                 decoration: InputDecoration(
                   label: Row(
                     children: [
-                      Icon(Icons.person),
+                      Icon(Icons.person_outline),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.02,
+                      ),
+                      Text("Full Name"),
+                    ],
+                  ),
+                  enabledBorder: OutlineInputBorder(),
+                  focusedBorder: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  label: Row(
+                    children: [
+                      Icon(Icons.email_outlined),
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.02,
                       ),
                       Text("E-Mail"),
+                    ],
+                  ),
+                  enabledBorder: OutlineInputBorder(),
+                  focusedBorder: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  label: Row(
+                    children: [
+                      Icon(Icons.tag_sharp),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.02,
+                      ),
+                      Text("Phone No"),
                     ],
                   ),
                   enabledBorder: OutlineInputBorder(),
@@ -91,31 +131,18 @@ class _SignupUIState extends State<SignupUI> {
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.01,
-              ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Forgot Password?",
-                    style: TextStyle(color: Colors.blue),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.01,
+                height: MediaQuery.of(context).size.height * 0.03,
               ),
               ElevatedButton(
                 onPressed: () {},
                 child: Text(
-                  "Login",
+                  "SIGNUP",
                   style: TextStyle(color: Colors.white),
                 ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                   fixedSize: Size(MediaQuery.of(context).size.width * 1,
-                      MediaQuery.of(context).size.height * 0.07),
+                      MediaQuery.of(context).size.height * 0.06),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
@@ -134,19 +161,19 @@ class _SignupUIState extends State<SignupUI> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset("assets/images/googlelogo.png",
-                        width: MediaQuery.of(context).size.width * 0.07),
+                        width: MediaQuery.of(context).size.width * 0.05),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.02,
+                      width: MediaQuery.of(context).size.width * 0.03,
                     ),
                     Text(
-                      "Sing-In With Google",
+                      "SIGN-IN WITH GOOGLE",
                       style: TextStyle(color: Colors.black),
                     ),
                   ],
                 ),
                 style: OutlinedButton.styleFrom(
                   fixedSize: Size(MediaQuery.of(context).size.width * 1,
-                      MediaQuery.of(context).size.height * 0.07),
+                      MediaQuery.of(context).size.height * 0.06),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
@@ -159,19 +186,19 @@ class _SignupUIState extends State<SignupUI> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Don't have an account?",
+                    "Already have an Account?",
                   ),
                   TextButton(
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SignupUI(),
+                            builder: (context) => LoginUI(),
                           ),
                         );
                       },
                       child: Text(
-                        "Sign Up",
+                        "Login",
                         style: TextStyle(color: Colors.blue),
                       ))
                 ],
