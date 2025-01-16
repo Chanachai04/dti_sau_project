@@ -2,6 +2,8 @@
 
 import 'dart:math';
 
+import 'package:dti_sau_project/views/login_ui.dart';
+import 'package:dti_sau_project/views/signup_ui.dart';
 import 'package:flutter/material.dart';
 
 class WelcomUI extends StatefulWidget {
@@ -55,7 +57,14 @@ class _WelcomUIState extends State<WelcomUI> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginUI(),
+                      ),
+                    );
+                  },
                   child: Text(
                     "Login",
                   ),
@@ -71,7 +80,14 @@ class _WelcomUIState extends State<WelcomUI> {
                   width: MediaQuery.of(context).size.width * 0.05,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignupUI(),
+                      ),
+                    );
+                  },
                   child: Text(
                     "Sign up",
                     style: TextStyle(color: Colors.white),
